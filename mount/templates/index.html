@@ -83,20 +83,15 @@
 									<h3>A Few Accomplishments</h3>
 									<p>I'd like to share with you a couple of certifications that I've earned across my learning path</p>
 									<div class="features">
+										{% for cert in certifications %}
 										<article>
-											<a href="https://www.datacamp.com/certificate/DEA0015094893372" class="image"><img src="static/images/data_engineer_associate_badge.png" alt="data engineer associate badge" /></a>
+											<a href="{{ cert.href }}" class="image"><img src="{{ cert.img }}" alt="{{ cert.alt }}" /></a>
 											<div class="inner">
-												<h4>Data Engineer Associate</h4>
-												<p>Skills: Data Management, Programming for Data Engineering, and Exploratory Analysis</p>
+												<h4>{{ cert.name }}</h4>
+												<p>{{ cert.description }}</p>
 											</div>
 										</article>
-										<article>
-											<a href="https://www.credly.com/badges/082c3970-601c-4c28-bfaf-ad2f1ff11951/embedded" class="image"><img src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="" /></a>
-											<div class="inner">
-												<h4>AWS Cloud Practitioner</h4>
-												<p>Skills: AWS, Cloud, AWS Services, etc.</p>
-											</div>
-										</article>
+										{% endfor %}
 									</div>
 								</div>
 							</section>
