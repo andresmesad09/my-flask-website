@@ -5,9 +5,13 @@ import time
 from pathlib import Path
 import logging
 from src import CERTIFICATIONS
+from dotenv import load_dotenv
+import os
+
+load_dotenv(override=True)
 
 app = Flask(__name__)
-LAMBDA_URL = "https://drnvcqxvjujshgpzco7375j3ui0gdlgp.lambda-url.us-east-1.on.aws/"
+LAMBDA_URL = os.environ.get('LAMBDA_URL')
 
 # ----
 # Log
